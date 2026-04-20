@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCS 智能监控室 - 曜源科技</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .accent-orange { color: #f97316; }
+    </style>
+</head>
+<body class="bg-slate-800 text-white font-sans min-h-screen flex flex-col">
+
+    <nav class="w-full bg-slate-900 border-b border-slate-700 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-orange-500 rounded flex items-center justify-center font-bold">曜</div>
+                <span class="font-bold tracking-wider">智能监控室 (DCS 模拟终端)</span>
+            </div>
+            <a href="index.html" class="text-gray-400 hover:text-white transition flex items-center gap-2 text-sm border border-slate-600 px-4 py-2 rounded">
+                ⬅ 返回官网主页
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center py-12 px-6">
+        <div class="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="bg-slate-900 p-8 rounded-xl shadow-2xl border border-slate-700">
+                <h3 class="text-xl font-bold mb-8 text-orange-400 flex items-center gap-2"><span>⚙️</span> 核心参数控制干预</h3>
+                
+                <div class="mb-8">
+                    <label class="block text-sm font-medium mb-3">燃烧热值 (影响基础温度): <span id="val-heat" class="text-orange-400 font-bold text-lg ml-2">1150</span> °C</label>
+                    <input type="range" id="slider-heat" min="800" max="1500" value="1150" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-sm font-medium mb-3">冷却水流量 (水冷喷枪流量): <span id="val-water" class="text-blue-400 font-bold text-lg ml-2">50</span> L/min</label>
+                    <input type="range" id="slider-water" min="10" max="100" value="50" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-sm font-medium mb-3">炉体转速 (影响冶炼产能): <span id="val-speed" class="text-green-400 font-bold text-lg ml-2">1.5</span> rpm</label>
+                    <input type="range" id="slider-speed" min="0" max="5" step="0.1" value="1.5" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                </div>
+            </div>
+
+            <div class="bg-slate-900 p-8 rounded-xl shadow-2xl border border-slate-700 relative overflow-hidden">
+                <h3 class="text-xl font-bold mb-8 text-blue-400 flex items-center gap-2"><span>📡</span> 炉体实时状态反馈</h3>
+                
+                <div class="flex justify-center mb-10">
+                    <div class="w-40 h-40 rounded-full border-8 border-slate-700 border-t-orange-500 flex items-center justify-center relative transition-all duration-300" id="furnace-anim" style="animation: spin 4s linear infinite;">
+                        <span class="text-4xl drop-shadow-lg" id="fire-icon">🔥</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 text-center">
+                    <div class="bg-slate-800 p-5 rounded-lg border border-slate-700 shadow-inner">
+                        <div class="text-gray-400 text-sm mb-1">炉体核心温度</div>
+                        <div id="out-temp" class="text-4xl font-bold text-white">1150°C</div>
+                    </div>
+                    <div class="bg-slate-800 p-5 rounded-lg border border-slate-700 shadow-inner">
+                        <div class="text-gray-400 text-sm mb-1">设备综合健康度</div>
+                        <div id="out-health" class="text-4xl font-bold text-green-400">100%</div>
+                    </div>
+                    <div class="bg-slate-800 p-5 rounded-lg border border-slate-700 shadow-inner">
+                        <div class="text-gray-400 text-sm mb-1">实时产能估算</div>
+                        <div id="out-prod" class="text-2xl font-bold text-white">15.0 t/h</div>
+                    </div>
+                    <div class="bg-slate-800 p-5 rounded-lg border border-slate-700 shadow-inner">
+                        <div class="text-gray-400 text-sm mb-1">能源损耗率</div>
+                        <div id="out-energy" class="text-2xl font-bold text-white">76%</div>
+                    </div>
+                </div>
+
+                <div id="warning-box" class="mt-8 p-4 rounded-lg bg-red-900/40 border border-red-500 text-red-200 text-sm hidden shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+                    <div class="font-bold mb-1 flex items-center gap-2"><span class="animate-pulse">⚠️</span> 系统警报</div>
+                    <span id="warning-text" class="leading-relaxed"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const heat = document.getElementById('slider-heat');
+        const water = document.getElementById('slider-water');
+        const speed = document.getElementById('slider-speed');
+        
+        const valHeat = document.getElementById('val-heat');
+        const valWater = document.getElementById('val-water');
+        const valSpeed = document.getElementById('val-speed');
+        
+        const outTemp = document.getElementById('out-temp');
+        const outHealth = document.getElementById('out-health');
+        const outProd = document.getElementById('out-prod');
+        const outEnergy = document.getElementById('out-energy');
+        
+        const warningBox = document.getElementById('warning-box');
+        const warningText = document.getElementById('warning-text');
+        const anim = document.getElementById('furnace-anim');
+
+        function updateSim() {
+            let h = parseFloat(heat.value);
+            let w = parseFloat(water.value);
+            let s = parseFloat(speed.value);
+            
+            valHeat.innerText = h;
+            valWater.innerText = w;
+            valSpeed.innerText = s;
+
+            let actualTemp = h - (w - 50) * 1.5; 
+            outTemp.innerText = Math.round(actualTemp) + '°C';
+            
+            let health = 100;
+            let warnings = [];
+            
+            if(actualTemp > 1250) {
+                outTemp.className = "text-4xl font-bold text-red-500";
+                health -= (actualTemp - 1250) * 0.2;
+                warnings.push("炉体超温运转！耐火砖侵蚀加剧，设备寿命面临严重风险。");
+            } else {
+                outTemp.className = "text-4xl font-bold text-white";
+            }
+
+            if(w < 30) {
+                health -= 15;
+                warnings.push("冷却水流量低压！水冷喷枪可能被熔体反向烧穿，请立即检查泵站。");
+            }
+
+            health = Math.max(0, Math.min(100, Math.round(health)));
+            outHealth.innerText = health + '%';
+            
+            if(health < 60) outHealth.className = "text-4xl font-bold text-red-500";
+            else if(health < 90) outHealth.className = "text-4xl font-bold text-orange-400";
+            else outHealth.className = "text-4xl font-bold text-green-400";
+
+            outProd.innerText = (s * 10).toFixed(1) + ' t/h';
+            outEnergy.innerText = Math.round((h / 1500) * 100) + '%';
+
+            if(warnings.length > 0) {
+                warningBox.classList.remove('hidden');
+                warningText.innerHTML = warnings.join('<br>');
+            } else {
+                warningBox.classList.add('hidden');
+            }
+
+            let animSpeed = s > 0 ? (6 - s) : 0;
+            if(animSpeed === 0) anim.style.animation = 'none';
+            else anim.style.animation = `spin ${animSpeed}s linear infinite`;
+        }
+
+        heat.addEventListener('input', updateSim);
+        water.addEventListener('input', updateSim);
+        speed.addEventListener('input', updateSim);
+        updateSim(); 
+    </script>
+</body>
+</html>
