@@ -3,50 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>企业官网 | 冶金设备制造与研发</title>
-    <link rel="stylesheet" href="style.css">
+    <title>回转阳极炉及配套设备专家 - 某某冶金设备公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1504917595217-d4dc5f6127a1?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+        .accent-orange { color: #f97316; }
+        .bg-accent-orange { background-color: #f97316; }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>XX 科技发展有限公司</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">首页</a></li>
-                    <li><a href="#products">产品中心</a></li>
-                    <li><a href="#contact">联系我们</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>专业冶金设备与工业解决方案提供商</h2>
-            <p>致力于高端重工设计、环保设备研发与智能化控制系统集成。</p>
+    <nav class="fixed w-full z-50 bg-slate-900/95 text-white backdrop-blur-sm shadow-xl">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-accent-orange rounded flex items-center justify-center font-bold text-xl text-white">冶</div>
+                <span class="text-xl font-bold tracking-wider">XX重工机械</span>
+            </div>
+            <div class="hidden md:flex space-x-10 text-sm uppercase font-semibold">
+                <a href="#home" class="hover:text-orange-400 transition">首页</a>
+                <a href="#products" class="hover:text-orange-400 transition">核心产品</a>
+                <a href="#tech" class="hover:text-orange-400 transition">技术优势</a>
+                <a href="#contact" class="hover:text-orange-400 transition">联系我们</a>
+            </div>
+            <a href="#contact" class="bg-accent-orange px-6 py-2 rounded text-sm hover:bg-orange-600 transition">获取方案</a>
         </div>
-    </section>
+    </nav>
 
-    <section id="products" class="container">
-        <h2 class="section-title">核心产品模块</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>DCS 自动化控制系统</h3>
-                <p>为冶炼炉、精炼炉等核心设备提供精准的数据采集与智能化控制，确保生产高效稳定。</p>
-            </div>
-            <div class="card">
-                <h3>高效冷却系统</h3>
-                <p>专为高温重工环境设计的水冷方案，延长设备寿命，保障作业安全。</p>
-            </div>
-            <div class="card">
-                <h3>环保处理设备</h3>
-                <p>符合最新排放标准的工业废气、废水处理模块，助力企业绿色生产。</p>
+    <section id="home" class="hero-section h-[80vh] flex items-center justify-center text-center text-white">
+        <div class="max-w-4xl px-4">
+            <h2 class="text-orange-500 font-bold tracking-[0.3em] mb-4 uppercase">专于熔炼 · 精于制造</h2>
+            <h1 class="text-4xl md:text-6xl font-bold mb-8">回转阳极炉及其配套系统<br>全产业链解决方案</h1>
+            <p class="text-lg text-gray-300 mb-10 leading-relaxed">
+                我们致力于为有色金属冶炼企业提供高寿命、高自动化的回转炉本体及配套喷吹、燃烧、控制系统。
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#products" class="bg-accent-orange px-10 py-4 rounded font-bold hover:bg-orange-600">浏览产品目录</a>
+                <a href="#tech" class="border border-white/30 px-10 py-4 rounded font-bold hover:bg-white/10 transition">了解核心技术</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 XX 科技发展有限公司. 保留所有权利。</p>
+    <section id="products" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">核心产品中心</h2>
+                <div class="w-20 h-1 bg-accent-orange mx-auto mt-4"></div>
+                <p class="mt-6 text-gray-500 italic">Core Equipment & Integrated Systems</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-slate-700">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 text-5xl">⚙️</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">炉壳本体系统</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">包含高性能齿圈、托圈及高强度炉壳本体。采用精密加工工艺，确保大载荷下的长期稳定运行与极低的变形率。</p>
+                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">查看技术参数 →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-slate-700">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 text-5xl">🖥️</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">驱动装置及DCS控制</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">集成变频驱动与DCS自动化控制系统，实现炉体平稳旋转与精准定位，支持远程监控与故障预警。</p>
+                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">系统演示申请 →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-orange-500">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center text-orange-400 text-5xl">🔥</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">稀氧燃烧系统</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">针对阳极炉深度定制，显著降低燃料消耗，提高热效率，并有效控制NOx等有害气体排放。</p>
+                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">节能方案咨询 →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-slate-700">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 text-5xl">🔘</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">底吹搅拌系统</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">通过精密布置的底吹元件，优化熔池搅拌效果，缩短还原时间，提升产出品金属品质。</p>
+                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">定制布局设计 →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-slate-700">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 text-5xl">🏗️</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">固体还原喷吹系统</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">全自动粉料加压喷吹技术，实现还原剂的高精度定量给料，大幅提高金属回收率。</p>
+                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">了解系统优势 →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold text-orange-500 mb-2">20+</div>
+                <div class="text-gray-400 text-sm">行业经验</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-orange-500 mb-2">98%</div>
+                <div class="text-gray-400 text-sm">燃烧效率</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-orange-500 mb-2">Zero</div>
+                <div class="text-gray-400 text-sm">安全事故记录</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-orange-500 mb-2">24/7</div>
+                <div class="text-gray-400 text-sm">售后响应</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-8 md:mb-0">
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">准备好升级您的冶炼设备了吗？</h3>
+                <p class="text-gray-500">立即联系我们的资深工程师，获取定制化设备清单与报价。</p>
+                <div class="mt-6 text-xl font-bold text-accent-orange">📞 400 - XXX - XXXX</div>
+            </div>
+            <div class="flex gap-4">
+                <button class="bg-slate-900 text-white px-8 py-3 rounded hover:bg-slate-700 transition">发送邮件咨询</button>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
