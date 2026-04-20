@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>回转阳极炉及配套设备专家 - 某某冶金设备公司</title>
+    <title>回轉陽極爐及配套設備專家 - 宜興市耀遠科技發展有限公司</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
@@ -16,6 +17,7 @@
         .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; }
         .accent-orange { color: #f97316; }
         .bg-accent-orange { background-color: #f97316; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -23,29 +25,29 @@
     <nav class="fixed w-full z-50 bg-slate-900/95 text-white backdrop-blur-sm shadow-xl">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-accent-orange rounded flex items-center justify-center font-bold text-xl text-white">冶</div>
-                <span class="text-xl font-bold tracking-wider">XX重工机械</span>
+                <div class="w-10 h-10 bg-accent-orange rounded flex items-center justify-center font-bold text-xl text-white">耀</div>
+                <span class="text-xl font-bold tracking-wider">耀遠科技</span>
             </div>
             <div class="hidden md:flex space-x-10 text-sm uppercase font-semibold">
-                <a href="#home" class="hover:text-orange-400 transition">首页</a>
-                <a href="#products" class="hover:text-orange-400 transition">核心产品</a>
-                <a href="#tech" class="hover:text-orange-400 transition">技术优势</a>
-                <a href="#contact" class="hover:text-orange-400 transition">联系我们</a>
+                <a href="#home" class="hover:text-orange-400 transition">首頁</a>
+                <a href="#products" class="hover:text-orange-400 transition">核心產品</a>
+                <a href="#monitor" class="hover:text-orange-400 transition">智能監控</a>
+                <a href="#tech" class="hover:text-orange-400 transition">技術優勢</a>
             </div>
-            <a href="#contact" class="bg-accent-orange px-6 py-2 rounded text-sm hover:bg-orange-600 transition">获取方案</a>
+            <a href="#contact" class="bg-accent-orange px-6 py-2 rounded text-sm hover:bg-orange-600 transition">聯繫我們</a>
         </div>
     </nav>
 
     <section id="home" class="hero-section h-[80vh] flex items-center justify-center text-center text-white">
-        <div class="max-w-4xl px-4">
-            <h2 class="text-orange-500 font-bold tracking-[0.3em] mb-4 uppercase">专于熔炼 · 精于制造</h2>
-            <h1 class="text-4xl md:text-6xl font-bold mb-8">回转阳极炉及其配套系统<br>全产业链解决方案</h1>
+        <div class="max-w-4xl px-4 mt-16">
+            <h2 class="text-orange-500 font-bold tracking-[0.3em] mb-4 uppercase">專於熔煉 · 精於製造</h2>
+            <h1 class="text-4xl md:text-6xl font-bold mb-8">回轉陽極爐及傾動精煉爐<br>全產業鏈解決方案</h1>
             <p class="text-lg text-gray-300 mb-10 leading-relaxed">
-                我们致力于为有色金属冶炼企业提供高寿命、高自动化的回转炉本体及配套喷吹、燃烧、控制系统。
+                宜興市耀遠科技發展有限公司，致力於為有色金屬冶煉企業提供高壽命、高自動化的回轉爐本體、傾動精煉爐及配套水冷噴槍、DCS控制系統。
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#products" class="bg-accent-orange px-10 py-4 rounded font-bold hover:bg-orange-600">浏览产品目录</a>
-                <a href="#tech" class="border border-white/30 px-10 py-4 rounded font-bold hover:bg-white/10 transition">了解核心技术</a>
+                <a href="#products" class="bg-accent-orange px-10 py-4 rounded font-bold hover:bg-orange-600 transition">瀏覽產品目錄</a>
+                <a href="#contact" class="border border-white/30 px-10 py-4 rounded font-bold hover:bg-white/10 transition">獲取客製化方案</a>
             </div>
         </div>
     </section>
@@ -53,7 +55,7 @@
     <section id="products" class="py-24 bg-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900">核心产品中心</h2>
+                <h2 class="text-3xl font-bold text-slate-900">核心產品模組</h2>
                 <div class="w-20 h-1 bg-accent-orange mx-auto mt-4"></div>
                 <p class="mt-6 text-gray-500 italic">Core Equipment & Integrated Systems</p>
             </div>
@@ -61,47 +63,35 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-slate-700">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 text-5xl">⚙️</div>
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80" alt="熔煉爐" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">炉壳本体系统</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">包含高性能齿圈、托圈及高强度炉壳本体。采用精密加工工艺，确保大载荷下的长期稳定运行与极低的变形率。</p>
-                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">查看技术参数 →</a>
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">回轉/傾動爐殼本體系統</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">提供高性能齒圈、托圈及高強度回轉陽極爐與傾動精煉爐本體。採用精密加工工藝，確保大載荷下的長期穩定運行與極低的變形率。</p>
+                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">查看技術參數 →</a>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-slate-700">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 text-5xl">🖥️</div>
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80" alt="控制系統" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">驱动装置及DCS控制</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">集成变频驱动与DCS自动化控制系统，实现炉体平稳旋转与精准定位，支持远程监控与故障预警。</p>
-                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">系统演示申请 →</a>
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">DCS自動化控制系統</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">專為冶金設備研發，集成變頻驅動與DCS中控，實現爐體平穩旋轉、精準定位及溫度壓力數據監控，支持遠程故障預警。</p>
+                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">系統演示申請 →</a>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-orange-500">
-                    <div class="h-48 bg-slate-800 flex items-center justify-center text-orange-400 text-5xl">🔥</div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">稀氧燃烧系统</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">针对阳极炉深度定制，显著降低燃料消耗，提高热效率，并有效控制NOx等有害气体排放。</p>
-                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">节能方案咨询 →</a>
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580983546223-953e198755b6?auto=format&fit=crop&q=80" alt="水冷設備" class="w-full h-full object-cover">
                     </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-slate-700">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 text-5xl">🔘</div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">底吹搅拌系统</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">通过精密布置的底吹元件，优化熔池搅拌效果，缩短还原时间，提升产出品金属品质。</p>
-                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">定制布局设计 →</a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover border-b-4 border-slate-700">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 text-5xl">🏗️</div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">固体还原喷吹系统</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">全自动粉料加压喷吹技术，实现还原剂的高精度定量给料，大幅提高金属回收率。</p>
-                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">了解系统优势 →</a>
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">高效水冷噴槍系統</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">專為高溫重工環境設計的耐高溫水冷噴槍方案，有效延長噴槍及爐體使用壽命，保障爐內氣體穩定噴吹與作業安全。</p>
+                        <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">客製化設計諮詢 →</a>
                     </div>
                 </div>
 
@@ -109,39 +99,162 @@
         </div>
     </section>
 
-    <section id="tech" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-4xl font-bold text-orange-500 mb-2">20+</div>
-                <div class="text-gray-400 text-sm">行业经验</div>
+    <section id="monitor" class="py-20 bg-slate-800 text-white shadow-inner">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">智能生產監控中心 (DCS模擬)</h2>
+                <div class="w-20 h-1 bg-accent-orange mx-auto mt-4"></div>
+                <p class="mt-4 text-gray-400">滑動下方參數，體驗控制系統與水冷系統如何保障爐體安全與效能</p>
             </div>
-            <div>
-                <div class="text-4xl font-bold text-orange-500 mb-2">98%</div>
-                <div class="text-gray-400 text-sm">燃烧效率</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-orange-500 mb-2">Zero</div>
-                <div class="text-gray-400 text-sm">安全事故记录</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-orange-500 mb-2">24/7</div>
-                <div class="text-gray-400 text-sm">售后响应</div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-slate-900 p-8 rounded-xl shadow-2xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-6 text-orange-400">📊 DCS 參數調節</h3>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium mb-2">燃燒熱值 (影響基礎溫度): <span id="val-heat" class="text-orange-400 font-bold">1150</span> °C</label>
+                        <input type="range" id="slider-heat" min="800" max="1500" value="1150" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium mb-2">冷卻水流量 (降低實際溫度): <span id="val-water" class="text-blue-400 font-bold">50</span> L/min</label>
+                        <input type="range" id="slider-water" min="10" max="100" value="50" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium mb-2">爐體轉速 (影響產能): <span id="val-speed" class="text-green-400 font-bold">1.5</span> rpm</label>
+                        <input type="range" id="slider-speed" min="0" max="5" step="0.1" value="1.5" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-xl shadow-2xl border border-slate-700 relative overflow-hidden">
+                    <h3 class="text-xl font-bold mb-6 text-orange-400">📡 實時狀態監控</h3>
+                    
+                    <div class="flex justify-center mb-8">
+                        <div class="w-32 h-32 rounded-full border-8 border-slate-600 border-t-orange-500 flex items-center justify-center relative transition-all duration-300" id="furnace-anim" style="animation: spin 4s linear infinite;">
+                            <span class="text-2xl">🔥</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <div class="text-gray-400 text-sm">實際爐溫</div>
+                            <div id="out-temp" class="text-3xl font-bold text-white mt-1">1150°C</div>
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <div class="text-gray-400 text-sm">設備健康度</div>
+                            <div id="out-health" class="text-3xl font-bold text-green-400 mt-1">100%</div>
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <div class="text-gray-400 text-sm">實時產能估算</div>
+                            <div id="out-prod" class="text-xl font-bold text-white mt-1">15.0 t/h</div>
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <div class="text-gray-400 text-sm">能源損耗率</div>
+                            <div id="out-energy" class="text-xl font-bold text-white mt-1">76%</div>
+                        </div>
+                    </div>
+
+                    <div id="warning-box" class="mt-6 p-4 rounded-lg bg-red-900/50 border border-red-500 text-red-200 text-sm hidden">
+                        ⚠️ <span id="warning-text"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-white py-16">
+    <footer id="contact" class="bg-white py-16 border-t">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
             <div class="mb-8 md:mb-0">
-                <h3 class="text-2xl font-bold text-slate-900 mb-4">准备好升级您的冶炼设备了吗？</h3>
-                <p class="text-gray-500">立即联系我们的资深工程师，获取定制化设备清单与报价。</p>
-                <div class="mt-6 text-xl font-bold text-accent-orange">📞 400 - XXX - XXXX</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">準備好升級您的冶煉設備了嗎？</h3>
+                <p class="text-gray-500 mb-2">宜興市耀遠科技發展有限公司</p>
+                <p class="text-gray-500">地址：江蘇省無錫市宜興市</p>
+                <div class="mt-6 text-xl font-bold text-accent-orange">📞 歡迎致電洽談合作</div>
             </div>
             <div class="flex gap-4">
-                <button class="bg-slate-900 text-white px-8 py-3 rounded hover:bg-slate-700 transition">发送邮件咨询</button>
+                <p class="text-sm text-gray-400">&copy; 2026 宜興市耀遠科技發展有限公司 版權所有</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        const heat = document.getElementById('slider-heat');
+        const water = document.getElementById('slider-water');
+        const speed = document.getElementById('slider-speed');
+        
+        const valHeat = document.getElementById('val-heat');
+        const valWater = document.getElementById('val-water');
+        const valSpeed = document.getElementById('val-speed');
+        
+        const outTemp = document.getElementById('out-temp');
+        const outHealth = document.getElementById('out-health');
+        const outProd = document.getElementById('out-prod');
+        const outEnergy = document.getElementById('out-energy');
+        
+        const warningBox = document.getElementById('warning-box');
+        const warningText = document.getElementById('warning-text');
+        const anim = document.getElementById('furnace-anim');
+
+        function updateSim() {
+            let h = parseFloat(heat.value);
+            let w = parseFloat(water.value);
+            let s = parseFloat(speed.value);
+            
+            valHeat.innerText = h;
+            valWater.innerText = w;
+            valSpeed.innerText = s;
+
+            let actualTemp = h - (w - 50) * 1.5; 
+            outTemp.innerText = Math.round(actualTemp) + '°C';
+            
+            let health = 100;
+            let warnings = [];
+            
+            if(actualTemp > 1250) {
+                outTemp.classList.add('text-red-500');
+                outTemp.classList.remove('text-white');
+                health -= (actualTemp - 1250) * 0.2;
+                warnings.push("高溫預警！設備壽命面臨嚴重風險。");
+            } else {
+                outTemp.classList.remove('text-red-500');
+                outTemp.classList.add('text-white');
+            }
+
+            if(w < 30) {
+                health -= 15;
+                warnings.push("冷卻水流量過低，水冷噴槍損壞風險急劇增加！");
+            }
+
+            health = Math.max(0, Math.min(100, Math.round(health)));
+            outHealth.innerText = health + '%';
+            
+            if(health < 60) outHealth.className = "text-3xl font-bold mt-1 text-red-500";
+            else if(health < 90) outHealth.className = "text-3xl font-bold mt-1 text-orange-400";
+            else outHealth.className = "text-3xl font-bold mt-1 text-green-400";
+
+            outProd.innerText = (s * 10).toFixed(1) + ' t/h';
+            outEnergy.innerText = Math.round((h / 1500) * 100) + '%';
+
+            if(warnings.length > 0) {
+                warningBox.classList.remove('hidden');
+                warningText.innerHTML = warnings.join('<br>⚠️ ');
+            } else {
+                warningBox.classList.add('hidden');
+            }
+
+            let animSpeed = s > 0 ? (6 - s) : 0;
+            if(animSpeed === 0) {
+                anim.style.animation = 'none';
+            } else {
+                anim.style.animation = `spin ${animSpeed}s linear infinite`;
+            }
+        }
+
+        heat.addEventListener('input', updateSim);
+        water.addEventListener('input', updateSim);
+        speed.addEventListener('input', updateSim);
+        
+        updateSim(); 
+    </script>
 </body>
 </html>
